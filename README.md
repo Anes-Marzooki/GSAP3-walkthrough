@@ -1,20 +1,23 @@
-# A Basic Tween
+# The from and fromTo tweens
 
-To create our tween we used the [gsap.to()](<https://greensock.com/docs/v3/GSAP/gsap.to()>) method.
+The **`gsap.from()`** tween animates _backword_ the target **from** the values specified back **to** its current values.
 
-GSAP has a default duration of 0.5 seconds(500ms) that can be changed using the (gsap.default())[https://greensock.com/docs/v3/GSAP/gsap.defaults()] method like so: `gsap.default({duration: 2});`.
+```
+gsap.from(".tmux", {x:400, y:400});
+```
 
-### Performance note:
+The **`gsap.fromTo()`** tween gives more control to animate a target from a starting value to an ending value.
 
-To achieve the best performace, it's a good practice to animate CSS **transforms** and **opacities**, because they benefits from hardware acceleration and it's much easier for browsers to update `x` and `y` (transforms) rather than `top` and `left` which affect the layout of the document and causes a **reflow**:
+```
+gsap.fromTo(".tmix", {x:400, y:400}, {x:200, y:200});
+```
 
-- `x` and `y` (_translateX and translateY in CSS_)
-- `rotation`, `rotationX`, `rotationY`
-- `skewX` and `skewY`
-- `scaleX`, `scaleY`, `scale`
+## Notes:
+
+_To achieve the best results from `fromTo` tween_, **_make sure that the `from` vars and the `to` vars have the same properties._**
 
 ## Links and resources:
 
-- The **`gsap.to()`** docs: https://greensock.com/docs/v3/GSAP/gsap.to().
+- The **`gsap.fromTo()`** docs: https://greensock.com/docs/v3/GSAP/gsap.fromTo().
 
-- The **`gsap.default()`** docs: https://greensock.com/docs/v3/GSAP/gsap.defaults().
+- The **`gsap.from()`** docs: https://greensock.com/docs/v3/GSAP/gsap.from().
