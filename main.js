@@ -1,29 +1,12 @@
-const img = document.querySelector('.tmux');
-const fromBtn = document.querySelector('.from');
-const fromToBtn = document.querySelector('.fromTo');
+const tmux = document.querySelector('.tmux');
+const gnu = document.querySelector('.gnu');
+const run = document.querySelector('.run');
 
-const from = () => {
-	gsap.from(img, {
-		x: 400,
-		y: 200,
-	});
-};
-
-const fromTo = () => {
-	gsap.fromTo(
-		img,
-		{
-			x: 400,
-			y: 400,
-		},
-		{
-			x: 200,
-			y: 200,
-		}
-	);
+const animate = () => {
+	gsap.to(tmux, { x: 200, duration: 2, repeat: 1 });
+	gsap.to(gnu, { x: 200, duration: 2, delay: 2 });
 };
 
 window.addEventListener('load', () => {
-	fromBtn.addEventListener('click', from);
-	fromToBtn.addEventListener('click', fromTo);
+	run.addEventListener('click', animate);
 });
