@@ -2,7 +2,7 @@
 
 To create our tween we used the [gsap.to()](<https://greensock.com/docs/v3/GSAP/gsap.to()>) method.
 
-GSAP has a default duration of 0.5 seconds(500ms) that can be change using the (gsap.default())[https://greensock.com/docs/v3/GSAP/gsap.defaults()] method like so: `gsap.default({duration: 2});`.
+GSAP has a default duration of 0.5 seconds(500ms) that can be changed using the (gsap.default())[https://greensock.com/docs/v3/GSAP/gsap.defaults()] method like so: `gsap.default({duration: 2});`.
 
 ### Performance note:
 
