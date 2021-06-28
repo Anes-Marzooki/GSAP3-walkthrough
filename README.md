@@ -1,36 +1,19 @@
-# delay and repeat properties
+# Easing
 
-The configuration object (vars object) have some _optional_ **special** properties like `delay` and `repeat`.
+Easing controls the way and the **rate of change** during the animation.
 
-- **`repeat`** propperty represents how many times the animation should repeat.
-  So a `repeat` with value `1`, would play the animation **two** times.
+We can apply an easing on the **way in**, on the **way out** or **on both**. _By default the easing is set on the way out (`power1.out`)_.
 
-  ```
-  gsap.to(".tmux", {x:200, repeat: 1});
-  ```
+In simple terms, it controls whether the animation should **speed up** or **slow down**.
 
-- **`delay`** property represents the amount of delay(in seconds) before the animation should start. So an animation with `delay` set to `2` will animate after 2 seconds.
-
-  ```
-  gsap.to(".tmix", {x:00, delay:2});
-  ```
-
-- **`repeatDelay`** property represents the amount of time to wait between repeats. So an animation with `repeatDelay` set to `2` will wait 2 seconds between each repeat.
-
-  ```
-  gsap.to(".tmix", {x:200, repeat:3, repeatDelay:2});
-  ```
-
-- **`yoyo`** if set to true the animation will play back and forth, with each repeat the target will run in the opposite direction.
-
-  ```
-  gsap.to(".tmix", {x:200, repeat:3, yoyo: true});
-  ```
+```
+gsap.to(linear, { x: 200, ease: 'linear' });
+```
 
 ## Notes:
 
-Special properties are not animated.
+Some eases can be configured
 
 ## Links and resources:
 
-https://greensock.com/docs/v3/GSAP/Tween/vars
+ease visualizer docs: https://greensock.com/docs/v3/Eases
