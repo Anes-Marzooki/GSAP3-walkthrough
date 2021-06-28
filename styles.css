@@ -1,3 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.run {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0.3em;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
 .tmux {
 	width: 100px;
 }
