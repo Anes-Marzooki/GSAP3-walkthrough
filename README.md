@@ -1,19 +1,28 @@
-# Easing
+# Staggering
 
-Easing controls the way and the **rate of change** during the animation.
+When dealing with multiple targets, we can use the awesome `stagger` property to offset the start time on the targets in one single tween.
 
-We can apply an easing on the **way in**, on the **way out** or **on both**. _By default the easing is set on the way out (`power1.out`)_.
-
-In simple terms, it controls whether the animation should **speed up** or **slow down**.
+_Here will have a 0.2 seconds between the start of each target. we can pass a negative value to start from the last target backwards._
 
 ```
-gsap.to(linear, { x: 200, ease: 'linear' });
+gsap.to(".container .box", { x: 200, stagger: 0.2 });
 ```
+
+`stargger` accepts an object that can have many properties for more control like from where to start and the timing of the stagger is dispersed.
+
+```
+gsap.to(".container .box", { x: 200, stagger:{ each: 0.2, from:'center' }});
+```
+
+- `each:0.2` means will have a `0.2` seconds between the start of each animation.
+- `from:'center` means will start the stagger from the center.
+
+We can start from `edges`, `center`, `end` and more.
 
 ## Notes:
 
-Some eases can be configured
+When working with a grid is a good idea to check the documentation for the `grid` property of `stagger`.
 
 ## Links and resources:
 
-ease visualizer docs: https://greensock.com/docs/v3/Eases
+Staggers docs: https://greensock.com/docs/v3/Staggers
