@@ -1,28 +1,32 @@
-# Staggering
+# Tween Controlss
 
-When dealing with multiple targets, we can use the awesome `stagger` property to offset the start time on the targets in one single tween.
+Tweens have different methods for controlling playback like `play()` and `pause()`.
 
-_Here will have a 0.2 seconds between the start of each target. we can pass a negative value to start from the last target backwards._
+In order to control the tween we need a reference. `const myTween = gsap.to(...);`
 
-```
-gsap.to(".container .box", { x: 200, stagger: 0.2 });
-```
-
-`stargger` accepts an object that can have many properties for more control like from where to start and the timing of the stagger is dispersed.
+By default a tween will play automatically, so in order to control it we can set a property `paused` to `true`.
 
 ```
-gsap.to(".container .box", { x: 200, stagger:{ each: 0.2, from:'center' }});
+const myTween = gsap.to(".tmux", { x: 200, paused:true });
 ```
 
-- `each:0.2` means will have a `0.2` seconds between the start of each animation.
-- `from:'center` means will start the stagger from the center.
+And then we can use the control methods like `play()` to play the animation.
 
-We can start from `edges`, `center`, `end` and more.
+```
+myTween.play();
+```
+
+Appart from `play()` we can also use `pause()`, `restart()`, and `reverse()`.
 
 ## Notes:
 
-When working with a grid is a good idea to check the documentation for the `grid` property of `stagger`.
+In GSAP when a tween's playhead gets to the end it doesn't restart.
 
 ## Links and resources:
 
-Staggers docs: https://greensock.com/docs/v3/Staggers
+- Paused property docs: https://greensock.com/docs/v3/GSAP/Tween/paused().
+- Play method docs: https://greensock.com/docs/v3/GSAP/Tween/play().
+- Pause method docs: https://greensock.com/docs/v3/GSAP/Tween/paused().
+- Restart method docs: https://greensock.com/docs/v3/GSAP/Tween/restart().
+- Reverse method docs: https://greensock.com/docs/v3/GSAP/Tween/reverse().
+- Tween's methods and properties: https://greensock.com/docs/v3/GSAP/Tween.
